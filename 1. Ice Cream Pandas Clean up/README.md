@@ -8,7 +8,7 @@ The project is based on Josh Temple's [Pandas Cleanup exercise](https://github.c
 
 ## Dataset
 
-The [original dataset](https://github.com/joshtemple/pandas-cleanup/blob/master/sales.csv) contains 29,922 observations and six variables. Each row represents an order line rather than an entire order. The recorded transactions span January to July 2018.
+The dataset contains 29,922 observations and six variables. Each row represents an order line rather than an entire order. The recorded transactions span January to July 2018.
 
 | Variable | Description |
 | --- | --- |
