@@ -2,9 +2,9 @@
 
 ## Overview
 
-This project focuses on data cleaning and exploratory data analysis (EDA) using a synthetic sales dataset from a fictional ice cream company. Its objective is to investigate data quality issues, improve the consistency of transactional records, and analyse sales performance across products, categories and time.
+This project focuses mainly on data cleaning and briefly on data analysis, using a synthetic sales dataset from a fictional ice cream shop. Its objective is to investigate data quality issues, improve the consistency of transactional records, and analyse sales performance across products, categories and time.
 
-The project is based on Josh Temple's [Pandas Cleanup exercise](https://github.com/joshtemple/pandas-cleanup), originally presented at the Data + Desserts talk at the Flatiron School. It extends the original exercise by investigating selected anomalies before applying cleaning operations and correcting inconsistent transaction totals rather than discarding the corresponding records.
+The project is based on Josh Temple's [Pandas Cleanup exercise](https://github.com/joshtemple/pandas-cleanup). It extends the original exercise by investigating selected anomalies before applying cleaning operations and correcting inconsistent transaction totals rather than discarding the corresponding records.
 
 ## Technologies
 
@@ -53,13 +53,6 @@ Extract product categories from the `name` column using regular expressions and 
 - Rank the ten highest-revenue products.
 - Compare aggregated sales values across product categories.
 - Analyse weekly sales values through time-series visualisation.
-
-## Main Findings
-
-- The cleaning process retains 27,892 of the original 29,922 records (approximately 93.2%). All 28 inconsistent line totals are recalculated rather than removed.
-- Dark Chocolate ice cream ranks first by sales value (approximately $8,608), followed by Cookie Cone ($8,364) and Tea ($7,964).
-- Ice cream is the highest-revenue category (approximately $59,267), followed by cones ($31,940) and sorbets ($27,229).
-- Weekly sales values fluctuate over the observed period. The analysis is descriptive and does not establish seasonality or support forecasting conclusions.
 
 Sales rankings are based on monetary values, not the number of units sold. Results refer to the cleaned synthetic dataset and depend on the cleaning assumptions adopted. In real transactional data, negative amounts may represent refunds or reversals, and identical rows are not necessarily erroneous duplicates. These cases would require independent validation before applying the same transformations.
 
