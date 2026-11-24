@@ -1,18 +1,10 @@
-# Ice Cream Sales – Data Cleaning and Exploratory Data Analysis
+# Ice Cream Sales – Data Cleaning and Data Analysis
 
 ## Overview
 
-This project focuses mainly on data cleaning and briefly on data analysis, using a synthetic sales dataset from a fictional ice cream shop. Its objective is to investigate data quality issues, improve the consistency of transactional records, and analyse sales performance across products, categories and time.
+This project focuses mainly on data cleaning and briefly on data analysis, using a synthetic sales dataset from a fictional ice cream shop (sales.csv in the folder). Its objective is to investigate data quality issues, improve the consistency of transactional records, and analyse sales performance across products, categories and time.
 
 The project is based on Josh Temple's [Pandas Cleanup exercise](https://github.com/joshtemple/pandas-cleanup). It extends the original exercise by investigating selected anomalies before applying cleaning operations and correcting inconsistent transaction totals rather than discarding the corresponding records.
-
-## Technologies
-
-- Python
-- Pandas – data manipulation, cleaning and aggregation
-- Matplotlib and Seaborn – data visualisation
-- Regular expressions (Regex) – product category extraction
-- Jupyter Notebook / Google Colab
 
 ## Dataset
 
@@ -27,44 +19,4 @@ The [original dataset](https://github.com/joshtemple/pandas-cleanup/blob/master/
 | `quantity` | Number of units recorded on the order line |
 | `line_total` | Total monetary value of the order line |
 
-## Methodology
 
-### 1. Data Import and Initial Inspection
-
-- Inspect dataset dimensions, data types and missing values.
-- Create a working copy to preserve the original data.
-
-### 2. Data Cleaning and Quality Assessment
-
-- Rename price columns, remove currency symbols, convert prices to numeric values and convert order timestamps to datetime.
-- Investigate whether unit prices uniquely identify products for missing-name imputation. Reject this general imputation strategy because several products share the same price.
-- Examine negative unit prices and line totals, then convert both to absolute values under the assumption that negative signs represent recording errors.
-- Inspect five sampled orders containing duplicate rows before removing 549 duplicates.
-- Remove the 1,481 remaining records with missing product names.
-- Identify 28 inconsistencies between recorded line totals and unit price multiplied by quantity. Recalculate the totals, assuming unit prices and quantities are correct, and verify that no arithmetic discrepancies remain.
-- Review summary statistics after cleaning.
-
-### 3. Feature Engineering
-
-Extract product categories from the `name` column using regular expressions and store them in a new `category` column, preserving the original product names.
-
-### 4. Exploratory Data Analysis
-
-- Rank the ten highest-revenue products.
-- Compare aggregated sales values across product categories.
-- Analyse weekly sales values through time-series visualisation.
-
-Sales rankings are based on monetary values, not the number of units sold. Results refer to the cleaned synthetic dataset and depend on the cleaning assumptions adopted. In real transactional data, negative amounts may represent refunds or reversals, and identical rows are not necessarily erroneous duplicates. These cases would require independent validation before applying the same transformations.
-
-## Project Structure
-
-- `README.md` – project documentation
-- `Ice_Cream_Pandas_Clean_up.ipynb` – data cleaning and exploratory analysis notebook
-
-## How to Run
-
-1. Download `sales.csv` from the original repository linked above.
-2. Open the notebook in Google Colab or Jupyter Notebook.
-3. Install Pandas, Matplotlib and Seaborn if needed (`pip install pandas matplotlib seaborn`).
-4. Update the dataset path in `pd.read_csv()` to match the location of the CSV file. When running locally, remove the Google Drive mounting cell or instructions.
-5. Run the notebook cells sequentially.
